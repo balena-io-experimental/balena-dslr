@@ -1,7 +1,7 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-node
+FROM balenalib/%%BALENA_MACHINE_NAME%%-node:build
 
 # Install dependencies
-RUN install_packages libgphoto2-dev gphoto2
+RUN install_packages libgphoto2-dev gphoto2 python make
 
 # Defines our working directory in container
 WORKDIR /usr/src/app
@@ -11,11 +11,9 @@ COPY package.json ./
 
 # This install npm dependencies on the balena build server,
 # making sure to clean up the artifacts it creates in order to reduce the image size.
-RUN JOBS=MAX npm install --production --unsafe-perm && npm cache verify
+RUN JOBS=MAX npm install --unsafe-perm
 
 # This will copy all files in our root to the working  directory in the container
 COPY . ./
-
-RUN npm run build
 
 CMD ["npm", "start"]
