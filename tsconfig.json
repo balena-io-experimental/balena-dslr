@@ -10,6 +10,9 @@
     "noUnusedLocals": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "types": [
+      "node"
+    ],
 
     "esModuleInterop": true,
     "preserveConstEnums": true,
