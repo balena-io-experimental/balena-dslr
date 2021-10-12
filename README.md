@@ -1,8 +1,13 @@
-# balena-DSLR
+# balenablocks/dslr
 
-You can use this project to remotely control your DSLR camera from the balenaCloud dashboard. 
+Provides access to off the shelf cameras over USB using the [gphoto2](http://gphoto.org/) set of drivers.
 
-## Hardware
+---
+## Features
+
+## Usage
+
+## Suppported devices
 
 | Hardware required | Notes | 
 | :--: | :--: |
